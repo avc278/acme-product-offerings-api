@@ -84,10 +84,10 @@
               processed.map( product => <li key={ product.id }>
                 <h2>{ product.name }</h2> ${ product.suggestedPrice }
                 <div>{ product.description }</div>
-                Offered By: { product.offered.length}
+                Offered By: { product.offered.length} Stores
                 <ul>
                   {
-                    product.offered.map( offer => <li key={ offer.id }> { offer.company.name } at { offer.price }</li>)
+                    product.offered.map( offer => <li key={ offer.id }> { offer.company.name } at ${ Math.floor(offer.price / 100) }.{ offer.price % 100 }</li>)
                   }
                 </ul>
               </li>)
